@@ -1,9 +1,7 @@
 ﻿using CsvHelper;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.Text;
 
 namespace TP10
 {
@@ -26,15 +24,5 @@ namespace TP10
             MiArchivo.Close();
             return LecturaDelArchivo;
         }
-
-        /*public static void GuardarCsv(string rutaDeArchivo, string nombreDeArchivo, List<Propiedad> datos)
-        {
-            var datos2 = datos;
-            using (var writer = new StreamWriter(rutaDeArchivo + nombreDeArchivo))
-            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
-            {
-                csv.WriteRecords(datos2);
-            }
-        }*/
     }
 }

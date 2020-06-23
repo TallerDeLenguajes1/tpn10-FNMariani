@@ -11,6 +11,8 @@ namespace TP10
 
         static void Main(string[] args)
         {
+            //Ejercicio 1
+            /*
             int index = 0;
             var rnd = new Random();
 
@@ -52,6 +54,21 @@ namespace TP10
             {
                 csv.WriteRecords(propiedades);
             }
+            */
+
+            //Ejercicio 2
+            string frase, fraseAMorse;
+            string rutaDeArchivo = @"C:\Taller1\tpn10-FNMariani\TP10\TP10\bin\Debug\";
+
+            Console.WriteLine("Ingrese una frase a convertir: ");
+            frase = Console.ReadLine();
+
+            //Convertimos la frase
+            fraseAMorse = Helpers.ConversorDeMorse.TextoAMorse(frase.ToUpper());
+            Console.WriteLine(fraseAMorse);
+
+            Byte[] audio = Helpers.ConversorDeMorse.MorseAAudio(fraseAMorse);
+            File.WriteAllBytes(rutaDeArchivo + "audio.mp3", audio);
         }
     }
 }
